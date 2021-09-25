@@ -61,18 +61,49 @@
     <img src="./images/EAD-images/scatter_plot_checkout_price_via_num_orders_cuisine.png" > 
     <img src="./images/EAD-images/scatter_plot_checkout_price_via_num_orders_emailer_for_promotion.png" >
     <img src="./images/EAD-images/scatter_plot_checkout_price_via_num_orders_homepage_featured.png" >
-    <img src="./images/EAD-images/scatter_plot_checkout_price_via_num_orders_op_area.png" >
     <img src="./images/EAD-images/scatter_plot_checkout_price_via_num_orders_region_code.png" >
     <img src="./images/EAD-images/scatter_plot_log_num_orders_via_checkout_price_per_num_orders_center_type.png" >
     <img src="./images/EAD-images/scatter_plot_log_num_orders_via_checkout_price_per_num_orders_cuisine.png" >
     <img src="./images/EAD-images/scatter_plot_log_num_orders_via_checkout_price_per_num_orders_emailer_for_promotion.png" >
     <img src="./images/EAD-images/scatter_plot_log_num_orders_via_checkout_price_per_num_orders_homepage_featured.png" >
-    <img src="./images/EAD-images/scatter_plot_log_num_orders_via_checkout_price_per_num_orders_op_area.png" >
     <img src="./images/EAD-images/scatter_plot_log_num_orders_via_checkout_price_per_num_orders_region_code.png" >
 </p> <br/>
 
 <b>Figure 3.</b> TAT histogram of the four most popular airlines in 2015 in the USA. It is clear from these plots that there are two distincts classes for each airline. This give us a clue to classify TAT into two classes. 
 </p>
+
+<p align="center">
+    <img src="./images/EAD-images/mean_std_plot_week_via_checkout_price.png" >
+    <img src="./images/EAD-images/mean_std_plot_week_via_emailer_for_promotion.png" > 
+    <img src="./images/EAD-images/mean_std_plot_week_via_homepage_featured.png" >
+    <img src="./images/EAD-images/mean_std_plot_week_via_num_orders.png" >
+</p> <br/>
+
+<b>Figure 3.</b> TAT histogram of the four most popular airlines in 2015 in the USA. It is clear from these plots that there are two distincts classes for each airline. This give us a clue to classify TAT into two classes. 
+</p>
+
+
+
+
+
+
+
+<p align="center">
+    <img src="./images/EAD-images/sum_over_features_plot_week_via_checkout_price.png" >
+    <img src="./images/EAD-images/sum_over_features_plot_week_via_emailer_for_promotion.png" > 
+    <img src="./images/EAD-images/sum_over_features_plot_week_via_homepage_featured.png" >
+    <img src="./images/EAD-images/sum_over_features_plot_week_via_num_orders.png" >
+    <img src="./images/EAD-images/sum_over_features_plot_week_via_price_per_order.png">
+</p> <br/>
+
+<b>Figure 3.</b> TAT histogram of the four most popular airlines in 2015 in the USA. It is clear from these plots that there are two distincts classes for each airline. This give us a clue to classify TAT into two classes. 
+</p>
+
+
+
+
+
+
 
 ## 4. results
 ### 4.1. 
