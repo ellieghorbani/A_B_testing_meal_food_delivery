@@ -16,11 +16,10 @@
 ## 2. data, Problem, Methodology
 ### 2.1 Data
 <p align='justify'> 
-Data has gotten from  https://www.kaggle.com/ghoshsaptarshi/av-genpact-hack-dec2018?select=train.csv. This data was part of Analytics Vidhya and Genpact's Machine Learning Hackathon work during Dec 15 2018 00:00 GMT+0530 to Dec 16 2018 23:59 GMT+0530. <br/>
-Based on the data, there is a meal delivery company in multiple cities for sending meal orders to its customers. Collections of data are done weekly. The dataset includes three dataframes:<br/>
-fulfilmentcenterinfo.csv: 5 columns information contain 'center_id', 'city_code', 'region_code', 'center_type', and 'op_area' for each fulfillment center, <br/>
-meal_info.csv: three columns information contain 'meal_id', 'category', and 'cuisine' for each meal being served, <br/>
-order_via_price.csv: 9 columns information contains 'id', 'week', 'center_id', 'meal_id', 'checkout_price', 'base_price', 'emailer_for_promotion', 'homepage_featured', and 'num_orders' for orders and checkout price.<br/>
+Data has gotten from  https://www.kaggle.com/ghoshsaptarshi/av-genpact-hack-dec2018?select=train.csv. This data was part of Analytics Vidhya and Genpact's Machine Learning Hackathon work during Dec 15 2018 00:00 GMT+0530 to Dec 16 2018 23:59 GMT+0530. Based on the data, there is a meal delivery company in multiple cities for sending meal orders to its customers. Collections of data are done weekly. The dataset includes three dataframes:<br/>
+- fulfilmentcenterinfo.csv: 5 columns information contain 'center_id', 'city_code', 'region_code', 'center_type', and 'op_area' for each fulfillment center, <br/>
+- meal_info.csv: three columns information contain 'meal_id', 'category', and 'cuisine' for each meal being served, <br/>
+- order_via_price.csv: 9 columns information contains 'id', 'week', 'center_id', 'meal_id', 'checkout_price', 'base_price', 'emailer_for_promotion', 'homepage_featured', and 'num_orders' for orders and checkout price.<br/>
 As a result of a combination of three tables, there is a new table with 15 columns. In table 1 you can see all columns with a brief explanation of them.<br/>
 </p>
 
@@ -54,7 +53,12 @@ The preparation of raw materials is done weekly because the most  raw material i
 
 ### 2.3 Methodology
 <p align='justify'>
-For this work, A/B testing is a way to compare two versions of categories, cuisine, meal featured at homepage, emailer sent for promotion of meal and anonymized center type to figure out which performs better. While this method can not able to predict checkout price or number orders, the method is the simplest forms of a randomized controlled experiment. This testing method has risen in popularity over the last couple of decades as companies have realized that the online environment is well-suited to help managers, especially marketers, answer questions like, “What is most likely to make people click? Or buy our product? Or register with our site?”. It’s now used to evaluate everything from website design to online offers to headlines to product descriptions. The test works by showing two sets of users (assigned at random when they visit the site) different versions of a product or site and then determining which influenced your success metric the most. While it’s an often-used method, there are several mistakes that managers make when doing A/B testing: reacting to early data without letting the test run its full course; looking at too many metrics instead of focusing on the ones they most care about; and not doing enough retesting to be sure they didn’t get false positive results.
+For this work, A/B testing is a way to compare two versions of categories, cuisine, meal featured at homepage, emailer sent for promotion of meal and anonymized center type to figure out which performs better. While this method is not able to predict checkout price or number orders. This method is the simplest form of a randomized controlled experiment because you control the factors which you know about them but maybe there are other randomized factors that you do not know about. This testing method can help the food delivery company to realize which features in table 1 are more effective to increase, especially number orders, sales, and what is the most likely to make people order. For example there is data for Italian and Thai cuisines and then determining which influences our success features the most. Following these steps to do A/B testing:
+    - Null hypothesis: the number of orders of Italian cuisine is the same as Thai one.
+    - Hypothesis: their number orders are not the same.<br/>
+    - set $\alpha$ as significant level: for this case $\alpha=0.05$.<br/>
+    - Calculate P-value: two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods. <br/>
+    - Comparison: If $\alpha$ is less than P-value: fail to reject null hypothesis; otherwise reject null hypathisit.<br/>
 <br/>
 </p>
 
