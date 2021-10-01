@@ -4,12 +4,16 @@
 * [2. Methodology and data](#2-methodology-and-data)
 * [3. Exploratory data analysis (EDA)](#3-exploratory-data-analysis-EDA)
 * [4. results](#4-results)
-    - [4.1. ](#41-)
-    - [4.2. ](#42-)
-    - [4.3. ](#43-)
+    - [4.1. A/B Testing based on cuisions](#41-a-/-b-testing-based-on-cuisions)
+    - [4.2. A/B Testing based on categories](#42-a-/-b-testing-based-on-categories)
+    - [4.3. A/B Testing based on homepage_featured](#43-a-/-b-testing-based-on-homepage_featured)
+    - [4.4. A/B Testing based on emailer_for_promotion](#44-a-/-b-testing-based-on-emailer_for_promotion)
+    - [4.5. A/B Testing based on center_type](#45-a-/-b-testing-based-on-center_type)
+    - [4.6. A/B Testing based on week](#46-a-/-b-testing-based-on-week)
 * [5. Conclusions](#4-conclusions) 
 * [6. Setup](#5-setup)
 * [Reference](#reference)
+
 
 ## 1. Introduction
 
@@ -150,9 +154,130 @@ In the figure 7, total checkout_price and total checkout price per number orders
 </p>
 
 ## 4. results
-### 4.1. 
-### 4.2.
-### 4.3. 
+There are some hypotheses and they will be evaluated based on A/B testing. Significant level (α) is set 0.05.
+### 4.1. A/B Testing based on cuisions
+There are four cuisines and there is a question: do these cuisines have the same average checkout price and average number of orders?
+For example <br/>
+Null hypothesis: checkout price/ number orders of Italian cuisine is the same as the checkout price Thai cuisine!<br/>
+Alternative: The checkout price/ number orders of Italian and Thai cuisines is not the same!<br/>
+Calculate p-value <br/>
+if p-value <0.05: reject null hypothesis <br/>
+otherwise: can not reject null hypothesis <br/>
+Based on table 2 and 3, the null hypothesis can be rejected. 
+<p align="center">
+    <img src="./images/EAD-images/table_cuisine_checkout_price.png" >
+</p> 
+<p align='justify'>
+<b>Table 2.</b> There are two samples: A and B based on which cuisine. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_checkout_price_A, mean_checkout_price_B, n_A and n_B show average checkout price and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all cuisine it is not a correct hypothesis that the average checkout price is independent of cuisions. 
+</p>
+</p>
+<p align="center">
+    <img src="./images/EAD-images/table_cuisine_num_orders.png" >
+</p>
+<p align='justify'>
+<b>Table 3.</b> There are two samples: A and B based on which cuisine. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all cuisine it is not a correct hypothesis that the average number orders is independent of cuisions. 
+</p>
+</p>
+### 4.2. A/B Testing based on categories
+There are fourteen categories and there is a question: do these categories have the same average checkout price and average number of orders?
+For example <br/>
+Null hypothesis: checkout price/ number orders of Beverages is the same as the checkout price of Rice Bowl!<br/>
+Alternative: The checkout price/ number orders of Beverages and Rice Bowl is not the same!<br/>
+Based on table 4 and 5, the null hypothesis can be rejected for all categories. 
+<p align="center">
+    <img src="./images/EAD-images/table_category_checkout_price.png" >
+</p> 
+<p align='justify'>
+<b>Table 4.</b> There are two samples: A and B based on which cuisine. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_checkout_price_A, mean_checkout_price_B, n_A and n_B show average checkout price and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all cuisine it is not a correct hypothesis that the average chechout price is independent of categories. 
+</p>
+</p>
+<p align="center">
+    <img src="./images/EAD-images/table_category_num_orders.png" >
+</p>
+<p align='justify'>
+<b>Table 5.</b> There are two samples: A and B based on which cuisine. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all cuisine it is not a correct hypothesis that the number orders is independent of categories. 
+</p>
+</p>
+### 4.3. A/B Testing based on homepage_featured
+There are two options for meals featured at homepage and there is a question: do these options have the same average checkout price and average number of orders?<br/>
+Null hypothesis: checkout price/ number orders of both meals featured at homepage are the same!<br/>
+Alternative: The checkout price/ number orders of both meals featured at the homepage are not the same!<br/>
+Based on table 6 and 7, the null hypothesis can be rejected for both options of meal featured at homepage. 
+<p align="center">
+    <img src="./images/EAD-images/table_homepage_featured_checkout_price.png" >
+</p> 
+<p align='justify'>
+<b>Table 6.</b> There are two samples: A and B based on which option of meal featured at homepage. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_checkout_price_A, mean_checkout_price_B, n_A and n_B show average checkout price and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for both options of meal featured at homepage it is not a correct hypothesis that the average checkout price is independent of meal featured at homepage. 
+</p>
+</p>
+<p align="center">
+    <img src="./images/EAD-images/table_homepage_featured_num_orders.png" >
+</p>
+<p align='justify'>
+<b>Table 7.</b> There are two samples: A and B based on which cuisine. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for both options of meal featured at homepage it is not a correct hypothesis that the number orders is independent of meal featured at homepage. 
+</p>
+</p>
+### 4.4. A/B Testing based on emailer_for_promotion
+There are two options for emailer sent for promotion of meal and there is a question: do these options have the same average checkout price and average number of orders?<br/>
+Null hypothesis: checkout price/ number orders of both options of emailer sent for promotion of meal are the same!<br/>
+Alternative: The checkout price/ number orders of both options of emailer sent for promotion of meale are not the same!<br/>
+Based on table 8 and 9, the null hypothesis can be rejected for both options of emailer sent for promotion of meal. 
+<p align="center">
+    <img src="./images/EAD-images/table_emailer_for_promotion_checkout_price.png" >
+</p> 
+<p align='justify'>
+<b>Table 8.</b> There are two samples: A and B based on which option of emailer sent for promotion of meal. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_checkout_price_A, mean_checkout_price_B, n_A and n_B show average checkout price and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for both options of emailer sent for promotion of meal it is not a correct hypothesis that the average checkout price is independent of emailer sent for promotion of meal. 
+</p>
+</p>
+<p align="center">
+    <img src="./images/EAD-images/table_emailer_for_promotion_num_orders.png" >
+</p>
+<p align='justify'>
+<b>Table 9.</b> There are two samples: A and B based on which cuisine. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for both options of emailer sent for promotion of meal it is not a correct hypothesis that the number orders is independent of emailer sent for promotion of meal. 
+</p>
+</p>
+### 4.5. A/B Testing based on center_type
+There are three anonymized center types and there is a question: do these anonymized center types have the same average checkout price and average number of orders?<br/>
+For example <br/>
+Null hypothesis: checkout price/ number orders of type_A is the same as the checkout price of type_B!<br/>
+Alternative: The checkout price/ number orders of type_A and type_B is not the same!<br/>
+Based on table 10 and 11, the null hypothesis can be rejected for all categories. 
+<p align="center">
+    <img src="./images/EAD-images/table_center_type_checkout_price.png" >
+</p> 
+<p align='justify'>
+<b>Table 10.</b> There are two samples: A and B based on which anonymized center types. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_checkout_price_A, mean_checkout_price_B, n_A and n_B show average checkout price and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all anonymized center types it is not a correct hypothesis that the average checkout price is independent of anonymized center types. 
+</p>
+</p>
+<p align="center">
+    <img src="./images/EAD-images/table_center_type_num_orders.png" >
+</p>
+<p align='justify'>
+<b>Table 11.</b> There are two samples: A and B based on which anonymized center types. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all anonymized center types it is not a correct hypothesis that the average number orders is independent of anonymized center types. 
+</p>
+</p>
+### 4.6. A/B Testing based on week
+<p align="center">
+    <img src="./images/EAD-images/table_week_checkout_price_via_treshold.png" >
+</p> 
+<p align='justify'>
+<b>Table 10.</b> There are two samples: A and B based on which anonymized center types. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_checkout_price_A, mean_checkout_price_B, n_A and n_B show average checkout price and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all anonymized center types it is not a correct hypothesis that the average checkout price is independent of anonymized center types. 
+</p>
+</p>
+<p align="center">
+    <img src="./images/EAD-images/table_week_num_orders_via_treshold.png" >
+</p>
+<p align='justify'>
+<b>Table 11.</b> There are two samples: A and B based on which anonymized center types. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all anonymized center types it is not a correct hypothesis that the average number orders is independent of anonymized center types. 
+</p>
+</p>
+<p align="center">
+    <img src="./images/EAD-images/table_week_label_num_orders_three_parts_week.png" >
+</p>
+<p align='justify'>
+<b>Table 11.</b> There are two samples: A and B based on which anonymized center types. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all anonymized center types it is not a correct hypothesis that the average number orders is independent of anonymized center types. 
+</p>
+</p>
 ## 5. Conclusions
 
 
