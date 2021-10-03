@@ -22,8 +22,8 @@ The biggest challenge for this market is the preparation of raw materials while 
 In this work based on  A/B test approach, it evaluates which features have probability of increasing number orders and sales. The features are week, meal features such as category, cuisine, checkout price and number orders, and information for fulfillment centers like center area and city information. 
 <p/>
 <p align="center">
-    <img src="./images/EAD-images/Food-Box-Packaging.jpg" >
-</p> <br/>
+    <img src="./images/EAD-images/Food-Box-Packaging.jpg" width=300px height=300px>
+</p>
 <b>Figure 2.</b> Sample of food boxes for delevity from https://www.oxocustomboxes.com/product/custom-chinese-food-boxes-2 .
 </p>
 
