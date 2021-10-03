@@ -16,6 +16,16 @@
 
 
 ## 1. Introduction
+<p align='justify'>
+The United States Food Delivery Market obtained USD 18.5 billion in the year 2020. It is estimated that the market is further expected to grow and to reach a value of almost USD 33.7 billion by 2026.<br/>
+The biggest challenge for this market is the preparation of raw materials while the most raw material is perishable. To solve this problem, companies use procurement planning and need to forecast accurate demands. 
+In this work based on  A/B test approach, it evaluates which features have probability of increasing number orders and sales. The features are week, meal features such as category, cuisine, checkout price and number orders, and information for fulfillment centers like center area and city information. 
+<p/>
+<p align="center">
+    <img src="./images/EAD-images/Food-Box-Packaging.jpg" >
+</p> <br/>
+<b>Figure 2.</b> Sample of food boxes for delevity from https://www.oxocustomboxes.com/product/custom-chinese-food-boxes-2 .
+</p>
 
 ## 2. data, Problem, Methodology
 ### 2.1 Data
@@ -181,7 +191,7 @@ Based on table 2 and 3, the null hypothesis can be rejected.
 ### 4.2. A/B Testing based on categories
 There are fourteen categories and there is a question: do these categories have the same average checkout price and average number of orders?
 For example <br/>
-Null hypothesis: checkout price/ number orders of Beverages is the same as the checkout price of Rice Bowl!<br/>
+Null hypothesis: checkout price/ number orders of Beverages is the same as the checkout price/ number orders of Rice Bowl!<br/>
 Alternative: The checkout price/ number orders of Beverages and Rice Bowl is not the same!<br/>
 Based on table 4 and 5, the null hypothesis can be rejected for all categories. 
 <p align="center">
@@ -239,7 +249,7 @@ Based on table 8 and 9, the null hypothesis can be rejected for both options of 
 ### 4.5. A/B Testing based on center_type
 There are three anonymized center types and there is a question: do these anonymized center types have the same average checkout price and average number of orders?<br/>
 For example <br/>
-Null hypothesis: checkout price/ number orders of type_A is the same as the checkout price of type_B!<br/>
+Null hypothesis: checkout price/ number orders of type_A is the same as the checkout price/ number orders of type_B!<br/>
 Alternative: The checkout price/ number orders of type_A and type_B is not the same!<br/>
 Based on table 10 and 11, the null hypothesis can be rejected for all categories. 
 <p align="center">
@@ -257,29 +267,46 @@ Based on table 10 and 11, the null hypothesis can be rejected for all categories
 </p>
 </p>
 ### 4.6. A/B Testing based on week
+First of all, checkout price and number orders are divided into two parts based on the number of weeks. The goal is to find the number of weeks as threshold where the Null hypothesis can not be rejected. In the other word, <br/>
+Null hypothesis: checkout price/ number orders before and after week n_w (as a parameter of number week) is the same!<br/>
+Alternative: The checkout price/ number orders before and after week n_w is not the same!<br/>
+Goal: find a n_w as a threshold which can not reject the Null hypothesis.<br/>
+Table 12 shows there is no n_w for failing to reject the Null hypothesis of checkout price and it makes sense because of inflation. In contrast to the result of table 12, there is a n_w = 40 as threshold for number orders in table 13 that it can not reject the Null hypothesis. 
 <p align="center">
     <img src="./images/EAD-images/table_week_checkout_price_via_treshold.png" >
 </p> 
 <p align='justify'>
-<b>Table 10.</b> There are two samples: A and B based on which anonymized center types. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_checkout_price_A, mean_checkout_price_B, n_A and n_B show average checkout price and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all anonymized center types it is not a correct hypothesis that the average checkout price is independent of anonymized center types. 
+<b>Table 12.</b>Threshold is the number of weeks. There are two samples: A and B based on which before and after supposed threshold. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_checkout_price_A, mean_checkout_price_B, n_A and n_B show average checkout price and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all threshold parameters, it is not a correct hypothesis that the average checkout price is independent of before and after the threshold. 
 </p>
 </p>
 <p align="center">
     <img src="./images/EAD-images/table_week_num_orders_via_treshold.png" >
 </p>
 <p align='justify'>
-<b>Table 11.</b> There are two samples: A and B based on which anonymized center types. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all anonymized center types it is not a correct hypothesis that the average number orders is independent of anonymized center types. 
+<b>Table 13.</b> Threshold is the number of weeks. There are two samples: A and B based on which before and after supposed threshold. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all threshold parameters except threshold = 40, it is not a correct hypothesis that the average number order is independent of before and after the threshold. 
+</p>
+</p>
+Second, checkout price and number orders via weeks are separated into three parts. First part is related data before week 50 as a head part then there is a middle week between 50 to 100 and finally tail data that is collected after week 100. <br/>
+Null hypothesis: checkout price/ number orders different ranges (as a parameter of number week) is the same!<br/>
+Alternative: The checkout price/ number orders at different ranges is not the same!<br/>
+For checkout_price, it is expected to reject the Null hypothesis in order for the existence of inflation. The result of number orders is amazing for the Null hypothesis of number orders of weeks 50-100 and 100-145. Two sample t-test rejects the Null hypothesis while two sample u-test fails to reject the null hypothesis. It means for using two samples t-test and u-test, considering initial conditions are important.
+<p align="center">
+    <img src="./images/EAD-images/table_week_label_checkout_price_three_parts_week.png" >
+</p>
+<p align='justify'>
+<b>Table 14.</b> There are two samples: A and B based on three duration of weeks: 0 to 49, 50 to 99 and 100 to 145 weeks. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_checkout_price_A, mean_checkout_price_B, n_A and n_B show average checkout price and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all week intervals it is not a correct hypothesis that the average checkout price is independent of week interval. 
 </p>
 </p>
 <p align="center">
     <img src="./images/EAD-images/table_week_label_num_orders_three_parts_week.png" >
 </p>
 <p align='justify'>
-<b>Table 11.</b> There are two samples: A and B based on which anonymized center types. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all anonymized center types it is not a correct hypothesis that the average number orders is independent of anonymized center types. 
+<b>Table 15.</b>There are two samples: A and B based on three duration of weeks: 0 to 49, 50 to 99 and 100 to 145 weeks. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for 0-49 and 50-99 week intervals it is not a correct hypothesis that the average number orders is independent of week interval. For 50-99 and 100-145 week intervals, two sample t-test reject the Null hypothesis but two sample u-test fails to reject the Null hypothesis. 
 </p>
 </p>
 ## 5. Conclusions
-
+In summary, there are different types of cuisines, categories, homepage_featured, emailer_for_promotion, and center_type as features of the meal food delivery dataframe. As results of A/B testing for all of features, their different types do not have the same average of checkout price or number orders based on calculation p value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods. For average checkout price and number orders based on weeks, there are interesting results and there is a threshold on week 40 that the average number orders before and after that time may be the same and fails to reject the Null hypothesis. Another noticeable point is when the weeks are divided into three intervals and two samples t-test and u-test are not on the same way to reject and fail to reject the Null hypothesis. It shows the use of t-test (Welch t test) and two sample u-test (Mann Whitney) methods, considering conditions' effects on results.
+4.6. A/B Testing based on week
 
 ## 6. Setup
 There are two folders in the repository:<br/>
