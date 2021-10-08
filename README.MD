@@ -1,15 +1,18 @@
 # A/B Testing for Meal Food Delivery 
 ## Table of contents
 * [1. Introduction](#1-introduction)
-* [2. Methodology and data](#2-methodology-and-data)
-* [3. Exploratory data analysis (EDA)](#3-exploratory-data-analysis-EDA)
+* [2. Data, Problem and Methodology](#2-data-problem-and-methodology)
+   - [2.1. Data](#21-data)
+   - [2.2. Problem](#22-problem)
+   - [2.3. Methodology](#23-methodology)
+* [3. Exploratory data analysis (EDA)](#3-exploratory-data-analysis-eda)
 * [4. results](#4-results)
-    - [4.1. A/B Testing based on cuisions](#41-a-/-b-testing-based-on-cuisions)
-    - [4.2. A/B Testing based on categories](#42-a-/-b-testing-based-on-categories)
-    - [4.3. A/B Testing based on homepage_featured](#43-a-/-b-testing-based-on-homepage_featured)
-    - [4.4. A/B Testing based on emailer_for_promotion](#44-a-/-b-testing-based-on-emailer_for_promotion)
-    - [4.5. A/B Testing based on center_type](#45-a-/-b-testing-based-on-center_type)
-    - [4.6. A/B Testing based on week](#46-a-/-b-testing-based-on-week)
+    - [4.1. A/B Testing Based on Meal Cuisine](#41-ab-testing-based-on-meal-cuisine)
+    - [4.2. A/B Testing Based on Category of Meal](#42-ab-testing-based-on-category-of-meal)
+    - [4.3. A/B Testing Based on Meal Featured at Homepage](#43-ab-testing-based-on-meal-featured-at-homepage)
+    - [4.4. A/B Testing Based on Emailer Sent for Promotion of Meal](#44-ab-testing-based-on-emailer-sent-for-promotion-of-meal)
+    - [4.5. A/B Testing Based on Anonymized Center Type](#45-ab-testing-based-on-anonymized-center-type)
+    - [4.6. A/B Testing Based on Week Number](#46-ab-testing-based-on-week-number)
 * [5. Conclusions](#4-conclusions) 
 * [6. Setup](#5-setup)
 * [Reference](#reference)
@@ -27,7 +30,7 @@ In this work based on  A/B test approach, it evaluates which features have proba
 <b>Figure 2.</b> Sample of food boxes for delevity from https://www.oxocustomboxes.com/product/custom-chinese-food-boxes-2 .
 </p>
 
-## 2. data, Problem, Methodology
+## 2. data, Problem, and Methodology
 ### 2.1 Data
 <p align='justify'> 
 Data has gotten from  https://www.kaggle.com/ghoshsaptarshi/av-genpact-hack-dec2018?select=train.csv. This data was part of Analytics Vidhya and Genpact's Machine Learning Hackathon work during Dec 15 2018 00:00 GMT+0530 to Dec 16 2018 23:59 GMT+0530. Based on the data, there is a meal delivery company in multiple cities for sending meal orders to its customers. Collections of data are done weekly. The dataset includes three dataframes:<br/>
@@ -59,7 +62,7 @@ As a result of a combination of three tables, there is a new table with 15 colum
 </table>
 </p>
 
-### 2.2  Problem
+### 2.2 Problem
 <p align='justify'>
 The preparation of raw materials is done weekly because the most  raw material is perishable. This is the biggest problem for the company. In order to solve this problem, first of all the procurement planning is of the most extreme importance. Secondly, the centers can also help to forecast accurate demands. The aim of this work is following information for evaluation which factors help to balance between supply and demand and increase number orders and sales. This evaluation is done by A/B testing approach based on data from week 1 to 145, meal features such as category, cuisine, checkout price and number orders, and information for fulfillment centers like center area and city information.
 <br/>
@@ -165,7 +168,7 @@ In the figure 7, total checkout_price and total checkout price per number orders
 
 ## 4. results
 There are some hypotheses and they will be evaluated based on A/B testing. Significant level (α) is set 0.05.
-### 4.1. A/B Testing based on cuisions
+### 4.1. A/B Testing Based on Meal Cuisine
 There are four cuisines and there is a question: do these cuisines have the same average checkout price and average number of orders?
 For example <br/>
 Null hypothesis: checkout price/ number orders of Italian cuisine is the same as the checkout price Thai cuisine!<br/>
@@ -188,7 +191,7 @@ Based on table 2 and 3, the null hypothesis can be rejected.
 <b>Table 3.</b> There are two samples: A and B based on which cuisine. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all cuisine it is not a correct hypothesis that the average number orders is independent of cuisions. 
 </p>
 </p>
-### 4.2. A/B Testing based on categories
+### 4.2. A/B Testing Based on Category of Meal
 There are fourteen categories and there is a question: do these categories have the same average checkout price and average number of orders?
 For example <br/>
 Null hypothesis: checkout price/ number orders of Beverages is the same as the checkout price/ number orders of Rice Bowl!<br/>
@@ -208,7 +211,7 @@ Based on table 4 and 5, the null hypothesis can be rejected for all categories.
 <b>Table 5.</b> There are two samples: A and B based on which cuisine. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all cuisine it is not a correct hypothesis that the number orders is independent of categories. 
 </p>
 </p>
-### 4.3. A/B Testing based on homepage_featured
+### 4.3. A/B Testing Based on Meal Featured at Homepage
 There are two options for meals featured at homepage and there is a question: do these options have the same average checkout price and average number of orders?<br/>
 Null hypothesis: checkout price/ number orders of both meals featured at homepage are the same!<br/>
 Alternative: The checkout price/ number orders of both meals featured at the homepage are not the same!<br/>
@@ -227,7 +230,7 @@ Based on table 6 and 7, the null hypothesis can be rejected for both options of 
 <b>Table 7.</b> There are two samples: A and B based on which cuisine. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for both options of meal featured at homepage it is not a correct hypothesis that the number orders is independent of meal featured at homepage. 
 </p>
 </p>
-### 4.4. A/B Testing based on emailer_for_promotion
+### 4.4. A/B Testing Based on Emailer Sent for Promotion of Meal
 There are two options for emailer sent for promotion of meal and there is a question: do these options have the same average checkout price and average number of orders?<br/>
 Null hypothesis: checkout price/ number orders of both options of emailer sent for promotion of meal are the same!<br/>
 Alternative: The checkout price/ number orders of both options of emailer sent for promotion of meale are not the same!<br/>
@@ -246,7 +249,7 @@ Based on table 8 and 9, the null hypothesis can be rejected for both options of 
 <b>Table 9.</b> There are two samples: A and B based on which cuisine. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for both options of emailer sent for promotion of meal it is not a correct hypothesis that the number orders is independent of emailer sent for promotion of meal. 
 </p>
 </p>
-### 4.5. A/B Testing based on center_type
+### 4.5. A/B Testing Based on Anonymized Center Type
 There are three anonymized center types and there is a question: do these anonymized center types have the same average checkout price and average number of orders?<br/>
 For example <br/>
 Null hypothesis: checkout price/ number orders of type_A is the same as the checkout price/ number orders of type_B!<br/>
@@ -266,7 +269,7 @@ Based on table 10 and 11, the null hypothesis can be rejected for all categories
 <b>Table 11.</b> There are two samples: A and B based on which anonymized center types. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all anonymized center types it is not a correct hypothesis that the average number orders is independent of anonymized center types. 
 </p>
 </p>
-### 4.6. A/B Testing based on week
+### 4.6. A/B Testing Based on Week Number
 First of all, checkout price and number orders are divided into two parts based on the number of weeks. The goal is to find the number of weeks as threshold where the Null hypothesis can not be rejected. In the other word, <br/>
 Null hypothesis: checkout price/ number orders before and after week n_w (as a parameter of number week) is the same!<br/>
 Alternative: The checkout price/ number orders before and after week n_w is not the same!<br/>
