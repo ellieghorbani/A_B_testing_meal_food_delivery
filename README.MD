@@ -22,12 +22,12 @@
 <p align='justify'>
 The United States Food Delivery Market obtained USD 18.5 billion in the year 2020. It is estimated that the market is further expected to grow and to reach a value of almost USD 33.7 billion by 2026.<br/>
 The biggest challenge for this market is the preparation of raw materials while the most raw material is perishable. To solve this problem, companies use procurement planning and need to forecast accurate demands. 
-In this work based on  A/B test approach, it evaluates which features have probability of increasing number orders and sales. The features are week, meal features such as category, cuisine, checkout price and number orders, and information for fulfillment centers like center area and city information. 
+In this work based on  A/B testing approach, it evaluates which features have probability of increasing number orders and sales. The features are week, meal features such as category, cuisine, checkout price and number orders, and information for fulfillment centers like center area and city information. 
 <p/>
 <p align="center">
     <img src="./images/EAD-images/Food-Box-Packaging.jpg" width=300px height=300px>
 </p>
-<b>Figure 2.</b> Sample of food boxes for delevity from https://www.oxocustomboxes.com/product/custom-chinese-food-boxes-2 .
+<b>Figure 1.</b> A sample of food boxes for delevity from https://www.oxocustomboxes.com/product/custom-chinese-food-boxes-2 .
 </p>
 
 ## 2. data, Problem, and Methodology
