@@ -174,14 +174,14 @@ if p-value <0.05: reject null hypothesis <br/>
 otherwise: can not reject null hypothesis <br/>
 Based on table 2 and 3, the null hypothesis can be rejected. <br/>
 <p align="center">
-    <img src="./images/EAD-images/table_cuisine_checkout_price.png" >
+    <img src="./images/tables/table_cuisine_checkout_price.png" >
 </p> 
 <p align='justify'>
 <b>Table 2.</b> There are two samples: A and B based on which cuisine. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_checkout_price_A, mean_checkout_price_B, n_A and n_B show average checkout price and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all cuisine it is not a correct hypothesis that the average checkout price is independent of cuisions.
 </p>
 </p>
 <p align="center">
-    <img src="./images/EAD-images/table_cuisine_num_orders.png" >
+    <img src="./images/tables/table_cuisine_num_orders.png" >
 </p>
 <p align='justify'>
 <b>Table 3.</b> There are two samples: A and B based on which cuisine. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all cuisine it is not a correct hypothesis that the average number orders is independent of cuisions.
@@ -195,14 +195,14 @@ Null hypothesis: checkout price/ number orders of Beverages is the same as the c
 Alternative: The checkout price/ number orders of Beverages and Rice Bowl is not the same!<br/>
 Based on table 4 and 5, the null hypothesis can be rejected for all categories. 
 <p align="center">
-    <img src="./images/EAD-images/table_category_checkout_price.png" >
+    <img src="./images/tables/table_category_checkout_price.png" >
 </p> 
 <p align='justify'>
 <b>Table 4.</b> There are two samples: A and B based on which cuisine. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_checkout_price_A, mean_checkout_price_B, n_A and n_B show average checkout price and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all cuisine it is not a correct hypothesis that the average chechout price is independent of categories. 
 </p>
 </p>
 <p align="center">
-    <img src="./images/EAD-images/table_category_num_orders.png" >
+    <img src="./images/tables/table_category_num_orders.png" >
 </p>
 <p align='justify'>
 <b>Table 5.</b> There are two samples: A and B based on which cuisine. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all cuisine it is not a correct hypothesis that the number orders is independent of categories. 
@@ -215,14 +215,14 @@ Null hypothesis: checkout price/ number orders of both meals featured at homepag
 Alternative: The checkout price/ number orders of both meals featured at the homepage are not the same!<br/>
 Based on table 6 and 7, the null hypothesis can be rejected for both options of meal featured at homepage. 
 <p align="center">
-    <img src="./images/EAD-images/table_homepage_featured_checkout_price.png" >
+    <img src="./images/tables/table_homepage_featured_checkout_price.png" >
 </p> 
 <p align='justify'>
 <b>Table 6.</b> There are two samples: A and B based on which option of meal featured at homepage. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_checkout_price_A, mean_checkout_price_B, n_A and n_B show average checkout price and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for both options of meal featured at homepage it is not a correct hypothesis that the average checkout price is independent of meal featured at homepage. 
 </p>
 </p>
 <p align="center">
-    <img src="./images/EAD-images/table_homepage_featured_num_orders.png" >
+    <img src="./images/tables/table_homepage_featured_num_orders.png" >
 </p>
 <p align='justify'>
 <b>Table 7.</b> There are two samples: A and B based on which cuisine. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for both options of meal featured at homepage it is not a correct hypothesis that the number orders is independent of meal featured at homepage. 
@@ -235,14 +235,14 @@ Null hypothesis: checkout price/ number orders of both options of emailer sent f
 Alternative: The checkout price/ number orders of both options of emailer sent for promotion of meale are not the same!<br/>
 Based on table 8 and 9, the null hypothesis can be rejected for both options of emailer sent for promotion of meal. 
 <p align="center">
-    <img src="./images/EAD-images/table_emailer_for_promotion_checkout_price.png" >
+    <img src="./images/tables/table_emailer_for_promotion_checkout_price.png" >
 </p> 
 <p align='justify'>
 <b>Table 8.</b> There are two samples: A and B based on which option of emailer sent for promotion of meal. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_checkout_price_A, mean_checkout_price_B, n_A and n_B show average checkout price and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for both options of emailer sent for promotion of meal it is not a correct hypothesis that the average checkout price is independent of emailer sent for promotion of meal. 
 </p>
 </p>
 <p align="center">
-    <img src="./images/EAD-images/table_emailer_for_promotion_num_orders.png" >
+    <img src="./images/tables/table_emailer_for_promotion_num_orders.png" >
 </p>
 <p align='justify'>
 <b>Table 9.</b> There are two samples: A and B based on which cuisine. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for both options of emailer sent for promotion of meal it is not a correct hypothesis that the number orders is independent of emailer sent for promotion of meal. 
@@ -256,14 +256,14 @@ Null hypothesis: checkout price/ number orders of type_A is the same as the chec
 Alternative: The checkout price/ number orders of type_A and type_B is not the same!<br/>
 Based on table 10 and 11, the null hypothesis can be rejected for all categories. 
 <p align="center">
-    <img src="./images/EAD-images/table_center_type_checkout_price.png" >
+    <img src="./images/tables/table_center_type_checkout_price.png" >
 </p> 
 <p align='justify'>
 <b>Table 10.</b> There are two samples: A and B based on which anonymized center types. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_checkout_price_A, mean_checkout_price_B, n_A and n_B show average checkout price and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all anonymized center types it is not a correct hypothesis that the average checkout price is independent of anonymized center types. 
 </p>
 </p>
 <p align="center">
-    <img src="./images/EAD-images/table_center_type_num_orders.png" >
+    <img src="./images/tables/table_center_type_num_orders.png" >
 </p>
 <p align='justify'>
 <b>Table 11.</b> There are two samples: A and B based on which anonymized center types. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all anonymized center types it is not a correct hypothesis that the average number orders is independent of anonymized center types. 
@@ -277,14 +277,14 @@ Alternative: The checkout price/ number orders before and after week n_w is not 
 Goal: find a n_w as a threshold which can not reject the Null hypothesis.<br/>
 Table 12 shows there is no n_w for failing to reject the Null hypothesis of checkout price and it makes sense because of inflation. In contrast to the result of table 12, there is a n_w = 40 as threshold for number orders in table 13 that it can not reject the Null hypothesis. 
 <p align="center">
-    <img src="./images/EAD-images/table_week_checkout_price_via_treshold.png" >
+    <img src="./images/tables/table_week_checkout_price_via_treshold.png" >
 </p> 
 <p align='justify'>
 <b>Table 12.</b>Threshold is the number of weeks. There are two samples: A and B based on which before and after supposed threshold. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_checkout_price_A, mean_checkout_price_B, n_A and n_B show average checkout price and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all threshold parameters, it is not a correct hypothesis that the average checkout price is independent of before and after the threshold. 
 </p>
 </p>
 <p align="center">
-    <img src="./images/EAD-images/table_week_num_orders_via_treshold.png" >
+    <img src="./images/tables/table_week_num_orders_via_treshold.png" >
 </p>
 <p align='justify'>
 <b>Table 13.</b> Threshold is the number of weeks. There are two samples: A and B based on which before and after supposed threshold. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all threshold parameters except threshold = 40, it is not a correct hypothesis that the average number order is independent of before and after the threshold. 
@@ -295,14 +295,14 @@ Null hypothesis: checkout price/ number orders different ranges (as a parameter 
 Alternative: The checkout price/ number orders at different ranges is not the same!<br/>
 For checkout_price, it is expected to reject the Null hypothesis in order for the existence of inflation. The result of number orders is amazing for the Null hypothesis of number orders of weeks 50-100 and 100-145. Two sample t-test rejects the Null hypothesis while two sample u-test fails to reject the null hypothesis. It means for using two samples t-test and u-test, considering initial conditions are important.
 <p align="center">
-    <img src="./images/EAD-images/table_week_label_checkout_price_three_parts_week.png" >
+    <img src="./images/tables/table_week_label_checkout_price_three_parts_week.png" >
 </p>
 <p align='justify'>
 <b>Table 14.</b> There are two samples: A and B based on three duration of weeks: 0 to 49, 50 to 99 and 100 to 145 weeks. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_checkout_price_A, mean_checkout_price_B, n_A and n_B show average checkout price and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for all week intervals it is not a correct hypothesis that the average checkout price is independent of week interval. <br/>
 </p>
 </p>
 <p align="center">
-    <img src="./images/EAD-images/table_week_label_num_orders_three_parts_week.png" >
+    <img src="./images/tables/table_week_label_num_orders_three_parts_week.png" >
 </p>
 <p align='justify'>
 <b>Table 15.</b>There are two samples: A and B based on three duration of weeks: 0 to 49, 50 to 99 and 100 to 145 weeks. pval_ttest and pval_utest show the amount of p_value from two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods respectively. mean_num_orders_A, mean_num_orders_B, n_A and n_B show average number orders and number of samples A and B. Two last columns are answers to the question that the Null hypothesis can be rejected or not. Based on this table for 0-49 and 50-99 week intervals it is not a correct hypothesis that the average number orders is independent of week interval. For 50-99 and 100-145 week intervals, two sample t-test reject the Null hypothesis but two sample u-test fails to reject the Null hypothesis.<br/>
@@ -318,4 +318,4 @@ There are two folders in the repository:<br/>
 1- notebooks: contain all Jupyter notebook files <br/>
 2- src : contain all .py files <br/>
 All codes are written in Python 3.6.9 <br/>
-To run this project you should run "A_B_testing_meal_food_delivery.py" in "src" folder or "A_B_testing_meal_food_delivery.ipynp" in "notebooks" folder<br/>
+To run this project you should run "A_B_testing_meal_food_delivery.py" in "src" folder or "A_B_testing_meal_food_delivery.ipynp" in "notebooks" folder.<br/>
