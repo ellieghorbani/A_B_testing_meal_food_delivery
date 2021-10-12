@@ -1,10 +1,9 @@
 # A/B Testing for Meal Food Delivery 
 ## Table of contents
 * [1. Introduction](#1-introduction)
-* [2. Data, Problem and Methodology](#2-data-problem-and-methodology)
+* [2. Data and Methodology](#2-data-and-methodology)
    - [2.1. Data](#21-data)
-   - [2.2. Problem](#22-problem)
-   - [2.3. Methodology](#23-methodology)
+   - [2.2. Methodology](#22-methodology)
 * [3. Exploratory data analysis (EDA)](#3-exploratory-data-analysis-eda)
 * [4. results](#4-results)
     - [4.1. A/B Testing Based on Meal Cuisine](#41-ab-testing-based-on-meal-cuisine)
@@ -15,14 +14,14 @@
     - [4.6. A/B Testing Based on Week Number](#46-ab-testing-based-on-week-number)
 * [5. Conclusions](#4-conclusions) 
 * [6. Setup](#5-setup)
-* [Reference](#reference)
 
 
 ## 1. Introduction
 <p align='justify'>
-The United States Food Delivery Market obtained USD 18.5 billion in the year 2020. It is estimated that the market is further expected to grow and to reach a value of almost USD 33.7 billion by 2026.<br/>
-The biggest challenge for this market is the preparation of raw materials while the most raw material is perishable. To solve this problem, companies use procurement planning and need to forecast accurate demands. 
-In this work based on  A/B testing approach, it evaluates which features have probability of increasing number orders and sales. The features are week, meal features such as category, cuisine, checkout price and number orders, and information for fulfillment centers like center area and city information. 
+The United States Food Delivery Market generated $18.5 billion in 2020. It is estimated that the market will grow rapidly and reach $33.7 billion by 2026.
+One of the biggest challenges for this market is the preparation of raw materials because most raw materials are perishable. To solve this problem, companies use procurement planning and need to forecast accurate demands. In this work instead of building models to predict the demand, the whole market was studied to understand if there has been any significant change in order numbers, prices and sales over time using the hypothesis testing approach. An extensive investigation of the data was performed by considering features such as week, meal features such as category, cuisine, checkout price and number of orders, and information for fulfillment centers like center area and city information.<br/>
+Interestingly, it is observed that different hypothesis testing methods may give different results as to whether or not reject the null hypothesis. Therefore, one should be careful about the assumptions of each method and then draw a conclusion to make sure that the assumptions are met. This might be more crucial and give misleading results if someone uses a softwares to perform hypothesis testing without understanding how the software performs the test. Also it was shown that by changing the threshold of variables one could find a regime where null hypothesis is rejected although this rejection is an artifact of choosing a specific range of threshold.<br/>
+
 <p/>
 <p align="center">
     <img src="./images/EAD-images/Food-Box-Packaging.jpg" width=300px height=300px>
@@ -30,17 +29,19 @@ In this work based on  A/B testing approach, it evaluates which features have pr
 <b>Figure 1.</b> A sample of food boxes for delevity from https://www.oxocustomboxes.com/product/custom-chinese-food-boxes-2 .
 </p>
 
-## 2. data, Problem, and Methodology
+## 2. data and Methodology
 ### 2.1 Data
 <p align='justify'> 
-Data has gotten from  https://www.kaggle.com/ghoshsaptarshi/av-genpact-hack-dec2018?select=train.csv. This data was part of Analytics Vidhya and Genpact's Machine Learning Hackathon work during Dec 15 2018 00:00 GMT+0530 to Dec 16 2018 23:59 GMT+0530. Based on the data, there is a meal delivery company in multiple cities for sending meal orders to its customers. Collections of data are done weekly. The dataset includes three dataframes:<br/>
-- fulfilmentcenterinfo.csv: 5 columns information contain 'center_id', 'city_code', 'region_code', 'center_type', and 'op_area' for each fulfillment center, <br/>
-- meal_info.csv: three columns information contain 'meal_id', 'category', and 'cuisine' for each meal being served, <br/>
+The source of the data is from Kaggle 
+(https://www.kaggle.com/ghoshsaptarshi/av-genpact-hack-dec2018?select=train.csv). This data was part of Analytics Vidhya and Genpact's Machine Learning Hackathon and the goal was to predict the future demand. Based on the data, there is a meal delivery company in multiple cities which delivers meal orders from its centers to its customers. Collections of data are done weekly. The dataset includes three dataframes:<br/>
+- fulfilmentcenterinfo.csv: 5 columns information contain 'center_id', 'city_code', 'region_code', 'center_type', and 'op_area' for each fulfillment center,<br/>
+- meal_info.csv: three columns information contain 'meal_id', 'category', and 'cuisine' for each meal being served,<br/>
 - order_via_price.csv: 9 columns information contains 'id', 'week', 'center_id', 'meal_id', 'checkout_price', 'base_price', 'emailer_for_promotion', 'homepage_featured', and 'num_orders' for orders and checkout price.<br/>
-As a result of a combination of three tables, there is a new table with 15 columns. In table 1 you can see all columns with a brief explanation of them.<br/>
+As a result of a combination of three tables, there is a new table with 15 columns. In table 1 you can see all columns with a brief explanation of them.
+<br/>
 </p>
 
-<table> {float:left}
+<table> 
     <caption><b>Table 1.</b> Introducing features and their Feature Explanation
   </caption> 
     <tr align="left"> <th>Fearture</th><th>Feature Explanation</th> </tr> 
@@ -62,26 +63,21 @@ As a result of a combination of three tables, there is a new table with 15 colum
 </table>
 </p>
 
-### 2.2 Problem
+### 2.2 Methodology
 <p align='justify'>
-The preparation of raw materials is done weekly because the most  raw material is perishable. This is the biggest problem for the company. In order to solve this problem, first of all the procurement planning is of the most extreme importance. Secondly, the centers can also help to forecast accurate demands. The aim of this work is following information for evaluation which factors help to balance between supply and demand and increase number orders and sales. This evaluation is done by A/B testing approach based on data from week 1 to 145, meal features such as category, cuisine, checkout price and number orders, and information for fulfillment centers like center area and city information.
-<br/>
-</p>
-
-### 2.3 Methodology
-<p align='justify'>
-For this work, A/B testing is a way to compare two versions of categories, cuisine, meal featured at homepage, emailer sent for promotion of meal and anonymized center type to figure out which performs better. While this method is not able to predict checkout price or number orders. This method is the simplest form of a randomized controlled experiment because you control the factors which you know about them but maybe there are other randomized factors that you do not know about. This testing method can help the food delivery company to realize which features in table 1 are more effective to increase, especially number orders, sales, and what is the most likely to make people order. For example there is data for Italian and Thai cuisines and then determining which influences our success features the most. Following these steps to do A/B testing:
-    - Null hypothesis: the number of orders of Italian cuisine is the same as Thai one.<br/>
-    - Hypothesis: their number orders are not the same.<br/>
-    - set α significant level: for this case α=0.05.<br/>
-    - Calculate P-value: two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods. <br/>
-    - Comparison: If α is less than P-value: fail to reject null hypothesis; otherwise reject null hypathisit.<br/>
+For this work, two sample hypothesis testing (A/B testing) was used to find out if there is a significant change in two versions of categories, cuisine, meal featured at homepage, emailer sent for promotion of meal and anonymized center type. As it was mentioned this method is not able to predict checkout price or number orders and that was not the goal of this investigation. This method is the simplest form of a randomized controlled experiment because one  can control the factors which they know about but maybe there are other randomized factors that they do not know about. This testing method can help the food delivery company to get a sense of change in the market based on features in table 1, especially number of orders and sales. For example, the goal was to answer the question of if there is a significant difference in sales or number of orders between Italian and Thai cuisines. For this example the following steps were taken to do the two sample hypothesis testing (A/B testing): 
+Null hypothesis: the average number of orders for Italian cuisine is the same as the average number of orders for Thai cuisine.
+Alternative hypothesis: the average number of orders are not the same.<br/>
+- set significant level (α) : α=0.05.<br/>
+- Calculate p-value: two sample t-test (Welch t test) and two sample u-test (Mann Whitney) methods.<br/>
+- Conclusion: If p_value is less than α: reject the null hypothesis; otherwise fail to reject null hypothesis.<br/>
+A similar procedure was followed to do all the other tests.<br/>
 <br/>
 </p>
 
 ## 3. Exploratory data analysis (EDA)
-<p align='justify'> 
- This section is performed by some EDA to gain some insights about the data. The figure 2 shows histograms of features. Based on this figure, there are three types for center_type and type_A has more frequency. The distribution of op_eara shows the maximum frequency is at area of operation in 4 km^2. It is interesting, the checkout price has a large range between $100 to $800 with more or less a normal distribution. In contrast, num_orders is in a wide range (0,25000) with half normal distribution. There are four types of cuisines: Thai, Indian, Italian (with the largest frequency) and Continental (with the least frequency) cuisines. Beverages have a very high frequency. Unlike beverages, other types of category have approximately the same frequency. Emailer_for_promotion and homepage_featured have two types with similar distributions. For histogram of week, there is a regular alternative but you should be careful because this image just shows how many frequencies each week, not how many number orders of each week.<br/>
+<p align='justify'>  
+In this section some EDA is performed to gain some insights about the data. The figure 2 shows histograms of features. Based on this figure, type_A has the highest level in center_type feature. The distribution of op_eara shows the maximum level is at the area of operation in 4 km^2. Interestingly, the checkout price has a narrow range between $100 to $800 with more or less a normal distribution. In contrast, num_orders is in a wide range from 0 to 25000 which follow a half normal distribution. There are four types of cuisines: Thai, Indian, Italian (with the highest frequency) and Continental (with the lowest frequency). Among the meals, beverages have a very high frequency. Unlike beverages, other types of meals have approximately the same frequency. Emailer_for_promotion and homepage_featured have two types with similar distributions. For feature week, there is a regular alternative behavior but you should be careful because this figure is just the histogram of week in the data and does not show the number of orders in each week. <br/>
  </p>
       
  <p align="center">
@@ -316,39 +312,4 @@ There are two folders in the repository:<br/>
 1- notebooks: contain all Jupyter notebook files <br/>
 2- src : contain all .py files <br/>
 All codes are written in Python 3.6.9 <br/>
-To run this project you should run "main_code.py" in "src" folder or "main_code.ipynp" in "notebooks" folder. In "main_code.py" the following modules are imported with their tasks are conveyed in their names:<br/>
-
-* step_1_cleaning_data<br/> 
-* step_2_convert_timecolumns_to_standard_time<br/>        
-* step_3_choose_features_and_define_target<br/> 
-* step_4_EDA_1<br/> 
-* step_4_EDA_2<br/>
-* step_4_EDA_of_AA_OO_DL_WN_3<br/>  
-* step_5_EDA_and_separate_airline_data<br/>
-* step_6_apply_ML_models_OO_airlines
- - step_6_1_divide_data_into_seen_and_unseen_files<br/>  
- - step_6_2_predict_categories_of_target<br/> 
- - step_6_3_predict_seen_target<br/>
- - step_6_4_predic_unseen_target<br/>
-* step_6_apply_ML_models_AA_airlines<br/>
- - step_6_1_divide_data_into_seen_and_unseen_files<br/>  
- - step_6_2_predict_categories_of_target<br/> 
- - step_6_3_predict_seen_target<br/>
- - step_6_4_predic_unseen_target<br/>
-* step_6_apply_ML_models_DL_airlines
- - step_6_1_divide_data_into_seen_and_unseen_files<br/>  
- - step_6_2_predict_categories_of_target<br/> 
- - step_6_3_predict_seen_target<br/>
- - step_6_4_predic_unseen_target<br/>
-* step_6_apply_ML_models_WN_airlines
- - step_6_1_divide_data_into_seen_and_unseen_files<br/>  
- - step_6_2_predict_categories_of_target<br/> 
- - step_6_3_predict_seen_target<br/>
- - step_6_4_predic_unseen_target<br/>
-
-## Reference
-[1] E. Mazareanu,“Global air traffic - number of flights 2004-2021”, Dec 2, 2020. (https://www.statista.com/statistics/564769/airline-industry-number-of-flights/#statisticContainer) <br/>
-[2] M. A. Makhloof, M. E. Waheed, U. A. Badawi, "Real-time aircraft turnaround operations manager", Production Planning & Control 25:1, pages 2-25, 2014.<br/>
-[3] https://www.azcentral.com <br/>
-[4] https://www.kaggle.com/usdot/flight-delays <br/>
-[5] https://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp <br/>
+To run this project you should run "A_B_testing_meal_food_delivery.py" in "src" folder or "A_B_testing_meal_food_delivery.ipynp" in "notebooks" folder<br/>
